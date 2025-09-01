@@ -1,21 +1,21 @@
 const trabajitos = [
     {
-        photo: "https://picsum.photos/id/237/300/400",
+        photo: "https://anaisvalentina.github.io/Previa-a-la-prueba/img/anaicita.webp",
         title: "Anaicita",
         description: "Creación de marca personal,Proyecto 2 con Profesora Paula Ron.",
     },
       {
-        photo: "https://picsum.photos/seed/picsum/300/400",
+        photo: "https://anaisvalentina.github.io/Previa-a-la-prueba/img/strawffee.webp",
         title: "Strawffee",
         description: "Cafetera a goteo hecha de acrílico, Proyecto 2 con Profesora Paula Ron",
     },
       {
-        photo: "https://picsum.photos/id/237/300/400",
+        photo: "https://anaisvalentina.github.io/Previa-a-la-prueba/img/lahora.webp",
         title: "La hora de conectarnos",
         description: "Afectos desechados, Proyecto 3 con Profesora Pamela Petruska",
     },
       {
-        photo: "https://picsum.photos/id/237/300/400",
+        photo: "https://anaisvalentina.github.io/Previa-a-la-prueba/img/reflaura.webp",
         title: "Reflaura",
         description: "Artefactos para sobrevivir con estilo al presente, Proyecto 3 con Profesora Pamela Petruska",
     }
@@ -259,16 +259,17 @@ function setup() {
     select("#nombre").html(yo.nombre);
     select("#aprendizaje").html(yo.esperado);
     select("#cuantos").html(otrxs.length);
-    //Lo que sigue es JavaScript a secas
+
     otrxs.forEach((x)=>{
         document.querySelector("#otredad").innerHTML += `<div><a href="${x.cuenta}"><img src="${x.foto}" title="${x.esperado}"></a></div>`;
     });
-    //Copy-paste, y arreglín
+
     trabajitos.forEach((x)=>{
         document.querySelector("#portafolio").innerHTML += `<div><img src="${x.photo}"><p>${x.title}</p></div>`;
     });
+   
+    document.querySelector("#autoria").innerHTML=yo.nombre;
 
-    //Ahora vuelvo al p5.js
     noStroke();
 }
 
@@ -282,13 +283,20 @@ function draw() {
 
     // Add shapes.
     push();
-    fill("red");
+    fill("pink");
     translate(0, -valor / 4, -valor / 7);
     sphere(valor / 4);
     pop();
     push();
-    fill("blue");
-    sphere(valor / 5);
+    fill("pink");
+    translate(-70, -valor / 50, -valor / 100);
+    torus(valor / 25);
+    rotateZ(90);
+    pop()
+    push();
+    fill("pink");
+    translate(70, -valor / 50, -valor / 100);
+    torus(valor / 25);
     pop();
 }
 
