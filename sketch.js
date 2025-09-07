@@ -275,29 +275,101 @@ function setup() {
 
 function draw() {
     background("white");
+    pointLight(255, 255, 255, valor / 1, valor / 1, 20);
     orbitControl();
-    pointLight(255, 255, 255, valor / 3, valor / 2, 50);
     specularMaterial(255);
-    shininess(50);
+    shininess(30);
     metalness(1);
-
-    // Add shapes.
-    push();
-    fill("pink");
-    translate(0, -valor / 4, -valor / 7);
+    ambientLight(95);
+    
+     push();
+    fill("rgb(250, 205, 137)");
+    translate(0, -40 / 4, -100 / 7);                //cara
     sphere(valor / 4);
     pop();
+    
+ push();
+ fill(0, 0, 0);
+translate(valor / 9, -valor / 30, valor / 5);
+     scale(1,0.2,1);
+sphere(valor / 30);
+pop();
+    
+     push();
+fill(0, 0, 0); 
+translate(-valor / 9, -valor / 30, valor / 5);
+sphere(valor / 30);
+pop();
+
     push();
-    fill("pink");
-    translate(-70, -valor / 50, -valor / 100);
-    torus(valor / 25);
-    rotateZ(90);
-    pop()
-    push();
-    fill("pink");
-    translate(70, -valor / 50, -valor / 100);
-    torus(valor / 25);
+    fill("black");
+    translate(valor / 9, -valor / 30, valor / 4);    //lentes
+    torus(valor / 11, valor / 70);
     pop();
+    
+    push();
+    fill("black");
+    translate(-valor / 9, -valor / 30, valor / 4);   //lentes
+    torus(valor / 11, valor / 70);
+    pop();
+    
+       push();
+    fill("rgba(219, 147, 175,0.5)");
+    translate(valor / 9, -valor / 30, valor / 4);    //vidrios
+    rotate(95.8,[30,0,0]);
+    cylinder(valor / 11, valor / 90);
+    pop();
+    
+    push();
+    fill("rgba(219, 147, 175,0.5)");
+    translate(-valor / 9, -valor / 30, valor / 4);   //vidrios
+    rotate(95.8,[30,0,0]);
+    cylinder(valor / 11, valor / 90);
+    pop();
+    
+    push();
+  translate(0, valor / 19, valor / 5);
+  noFill();
+  stroke(0);
+  strokeWeight(10);                   
+  arc(0, 0, valor / 10, valor / 10, 0, PI ); // sonrisa 
+pop();
+    
+      push();
+  translate(valor /150, -valor / 30, valor /4);
+  noFill();
+  stroke(0);
+  strokeWeight(10);                   
+  cylinder(valor /60, valor / 90); 
+pop();
+    
+
+    push();
+    fill("rgb(206, 112, 109)");
+    translate(-valor / 6, valor / 75, valor / 8);  //mejillas
+    sphere(valor / 19);
+    pop();
+    
+    push();
+    fill("rgb(206, 112, 109)");
+    translate(valor / 6, valor / 75, valor / 8);   //mejillas
+    sphere(valor / 19);
+    pop();
+    
+     push();
+    fill("rgb(235, 150, 184)");
+    translate(0, -300 / 4,-100 / 7);                //gorro
+    scale(1, 0.8,1); 
+  sphere(valor / 5);
+    pop();
+    
+     push();
+    fill("rgb(235, 150, 184)");
+    translate(30, -270 / 4,150 / 7);                //gorro
+    scale(1,0.1,1); 
+  sphere(valor / 5);
+    pop();
+    
 }
 
 function windowResized() {
